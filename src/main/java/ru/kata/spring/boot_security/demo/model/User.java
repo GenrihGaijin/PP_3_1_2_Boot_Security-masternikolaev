@@ -38,13 +38,13 @@ public class User implements UserDetails {
 
     @Column(name = "username")
     @NotNull(message = "Username не должен быть пустым")
-    private String username; //это имя нужно для входа
+    private String username;
 
     @Column(name = "password")
     @NotEmpty
     private String password;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
