@@ -43,14 +43,20 @@ public class UserServiceImpl implements UserService {
         return userFromDB.get();
     }
 
-
-
+/*    @Override
+    public User findByUsername(String username) {
+        User userDB = userRepository.findByUsername(username);
+        if (userDB == null) {
+            throw new UsernameNotFoundException(String.format("Пользователь с логином = %s не найден", username));
+        }
+        return userDB;
+    }*/
 
     @Transactional
     @Override
     public boolean createUser(User user) {
         if (userRepository.findByUsername(user.getUsername()) != null) {
-            return false;
+            return false;//юзер есть в БД
         } else {
             user.setPassword(passwordEncoder.encode(user.getPassword()));
             userRepository.save(user);
