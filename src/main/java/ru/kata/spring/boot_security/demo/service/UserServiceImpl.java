@@ -43,14 +43,7 @@ public class UserServiceImpl implements UserService {
         return userFromDB.get();
     }
 
-/*    @Override
-    public User findByUsername(String username) {
-        User userDB = userRepository.findByUsername(username);
-        if (userDB == null) {
-            throw new UsernameNotFoundException(String.format("Пользователь с логином = %s не найден", username));
-        }
-        return userDB;
-    }*/
+
 
     @Transactional
     @Override

@@ -9,7 +9,7 @@
     <title>User page</title>
 </head>
 <body>
-<!--Приветствие в шапке с логином и ролями-->
+<!--Приветствие-->
 <header>
     <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
         <div class="container-fluid text-white">
@@ -29,11 +29,11 @@
     </nav>
 </header>
 
-<!--- Устанавливаем навигацию с вертикальными подушками--->
+<!--- Устанавливаем навигацию--->
 
 <div class="d-flex">
     <div class="col-3">
-        <!--- Устанавливаем навигацию с вертикальными "подушками"--->
+
         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
             <a class="nav-link" href="/admin"
                sec:authorize="hasAuthority('ROLE_ADMIN')" role="tab"
